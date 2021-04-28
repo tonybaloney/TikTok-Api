@@ -75,7 +75,7 @@ class browser:
             self.options["executablePath"] = self.executablePath
 
         try:
-            self.browser = get_playwright().webkit.launch(
+            self.browser = get_playwright().chromium.launch(
                 args=self.args, **self.options
             )
         except Exception as e:
