@@ -235,7 +235,7 @@ class TikTokApi:
                 verifyFp=kwargs.get("custom_verifyFp", verifyFp),
             )
 
-        query = {"verifyFp": verify_fp, "did": did, "_signature": signature}
+        query = {"verifyFp": verify_fp, "did": did}
         url = "{}&{}".format(kwargs["url"], urlencode(query))
         r = requests.get(
             url,
@@ -337,7 +337,7 @@ class TikTokApi:
             verify_fp, did, signature, userAgent, referrer = self.external_signer(
                 kwargs["url"], custom_did=kwargs.get("custom_did", None)
             )
-        query = {"verifyFp": verify_fp, "_signature": signature}
+        query = {"verifyFp": verify_fp}
         url = "{}&{}".format(kwargs["url"], urlencode(query))
         r = requests.get(
             url,
